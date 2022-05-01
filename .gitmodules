@@ -1,3 +1,15 @@
 [submodule "vendor/Catch2"]
 	path = vendor/Catch2
 	url = https://github.com/catchorg/Catch2.git
+[submodule "vendor/cxxtimer"]
+	path = vendor/cxxtimer
+	url = https://github.com/andremaravilha/cxxtimer.git
+[submodule "vendor/argparse"]
+	path = vendor/argparse
+	url = https://github.com/p-ranav/argparse.git
+[submodule "vendor/tabulate"]
+	path = vendor/tabulate
+	url = https://github.com/p-ranav/tabulate.git
+[submodule "vendor/json"]
+	path = vendor/json
+	url = https://github.com/nlohmann/json.git
