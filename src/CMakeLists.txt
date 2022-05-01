@@ -1,8 +1,3 @@
-# Указываем конфигурационный файл, из которого будет сгенерирован заголовочный файл
-# Если указан @ONLY, будут заменены только переменные вида @VAR@, а ${VAR} будет
-# проигнорирован. Это полезно для настройки сценариев, использующих ${VAR}.
-configure_file(cfg/config.hpp.in ${PROJECT_SOURCE_DIR}/include/config/config.hpp @ONLY)
-
 # ------------------------ LIBRARY ------------------------ #
 # Избавляемся от стандартного префикса создания статических библиотек
 set(CMAKE_STATIC_LIBRARY_PREFIX      "")
@@ -103,4 +98,5 @@ if(GTEST OR CTEST)
     endif()
 endif()
 
+add_subdirectory(cfg)
 add_subdirectory(rep)

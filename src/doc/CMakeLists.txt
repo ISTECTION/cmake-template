@@ -10,7 +10,7 @@ if(DOXYGEN_FOUND)
 
     # Таргет:
     # PS C:\...\build>     cmake --build . --target doc
-    # или
+    #   или
     # PS C:\...\build\doc> cmake --build . --target doc
     add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 else()
