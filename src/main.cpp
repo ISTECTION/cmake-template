@@ -1,3 +1,4 @@
+#include "exception/exception.hpp"
 #include "header.hpp"
 #include "lib.hpp"
 
@@ -14,9 +15,7 @@ int main (int argc, const char* argv[]) {
             print_hello();
 
         return 0;
-    } else {
-        constexpr std::size_t _err_argc = 3;
-        std::cerr << "error: " << _err_argc << '\n';
-        return _err_argc;
-    }
+
+    } else
+        throw exception(exception::TYPE::ARGC_ERROR);
 }

@@ -14,6 +14,10 @@ string(TOUPPER           ${META_PROJECT_ID}   META_PROJECT_ID)
 
 set(${META_PROJECT_NAME}_CXX_STANDARD 17)       # Стандарт CXX
 
+# Определяет является ли данные проект подпроектом
+if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR) # if(DEFINED PROJECT_NAME)
+  set(${META_PROJECT_NAME}_SUBPROJECT ON)
+endif()
 
 # ------------------------------------------------------------------------------
 project(
@@ -31,25 +35,3 @@ message(STATUS "Version:    ${META_VERSION}")
 message(STATUS "Compiler:   ${CMAKE_CXX_COMPILER}")
 message(STATUS "")
 # ------------------------------------------------------------------------------
-
-
-
-
-# list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
-
-# find_program(CPPCHECK_BIN NAMES cppcheck)
-# if(CPPCHECK_BIN)
-#     include(ProcessorCount)
-#     ProcessorCount(CPU_CORES)
-#     message(STATUS "Ваш процессор имеет ${CPU_CORES} потоков")
-
-#     add_custom_target(
-#         cppcheck
-#         COMMAND ${CPPCHECK_BIN}
-#         --check-config
-#         --enable=all
-#         --std=c++17
-#         ${SOURCES}
-#         COMMENT "Статический анализ кода с использованием ${CPP_CHECK_VERSION}"
-#     )
-# endif()

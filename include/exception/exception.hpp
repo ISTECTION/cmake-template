@@ -8,8 +8,9 @@ class exception : public std::exception
 {
 public:
     enum class TYPE {
-        ERR_TEST = 1
+        ARGC_ERROR = 1
     };
+
 private:
     std::string _Terror;
 public:
@@ -20,18 +21,15 @@ public:
 
         switch (_type)
         {
-        case TYPE::ERR_TEST:
-
+        case TYPE::ARGC_ERROR:
+            _Terror = "argumentation error";
             break;
-
         default:
-
+            _Terror = "no case for this type of error";
         }
     }
 
-    const char* what() const noexcept {
-        return _Terror.c_str();
-    }
+    const char* what() const noexcept { return _Terror.c_str(); }
 };
 
 #endif /// _EXCEPTION_HPP
