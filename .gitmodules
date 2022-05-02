@@ -12,7 +12,3 @@
 	path = vendor/tabulate
 	url = https://github.com/p-ranav/tabulate.git
 	shallow = true
-[submodule "vendor/json"]
-	path = vendor/json
-	url = https://github.com/nlohmann/json.git
-	shallow = true
