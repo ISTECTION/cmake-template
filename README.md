@@ -58,3 +58,13 @@ inkscape --export-filename=yourpdfoutput.pdf plot.svg --export-latex
 ```
 git submodule add <URL репозитория> <директория>
 ```
+
+* Удаление подмодулей
+```
+git rm <директория>
+```
+
+* Установка истории фиксации (--depth=1)
+```
+git config -f .gitmodules submodule.vendor/tabulate.shallow true
+```
