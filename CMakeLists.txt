@@ -26,7 +26,18 @@ project(
     DESCRIPTION "CMakeLists.txt v.1"    # [DESCRIPTION <project-description-string>]
     LANGUAGES CXX)                      # [LANGUAGES <language-name>...]
 
+
+# Add Library
+# add_library(${PROJECT_NAME} INTERFACE)
+# add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+# target_include_directories(${PROJECT_NAME}       INTERFACE
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
+# Add Library
+
 add_subdirectory(src)
+
+add_subdirectory(vendor/Catch2)         # Компиляции Catch2
 
 # ------------------------------------------------------------------------------
 # Подведение итогов настроек, напечатанных при сборке

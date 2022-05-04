@@ -1,6 +1,11 @@
 # CMake + Doxygen + GTest + CTest + LaTeX (v.1)
 
 
+
+[![Build status](https://ci.appveyor.com/api/projects/status/3de0b919bwn2wpa4?svg=true)](https://ci.appveyor.com/project/ISTECTION/cmake-template)
+[![LOC](https://sloc.xyz/github/ISTECTION/cmake-template)](https://github.com/ISTECTION/cmake-template)
+
+
 ## Клонирование репозитория
 
 Клонирование репозитория:
@@ -34,6 +39,8 @@ git submodule update
 
 * [Скачать CMake](https://cmake.org/download/)
 * [Скачать Inkscape](https://inkscape.org/ru/release/inkscape-1.0/)
+* [Скачать Chocolatey](https://chocolatey.org/)
+* [Скачать Git](https://gitforwindows.org/)
 
 ## Репозитории
 

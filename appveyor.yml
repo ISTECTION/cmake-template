@@ -1,0 +1,10 @@
+image: Visual Studio 2015  # образ для сборки
+
+branches:
+  only:
+    - master # ветка git
+
+build: off  # будем использовать свой скрипт сборки
+
+build_script:
+  - Build-Project.ps1

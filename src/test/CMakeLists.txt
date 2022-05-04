@@ -1,0 +1,11 @@
+enable_testing()
+macro(csv_add_test TESTNAME)
+    add_executable(${TESTNAME} ${ARGN})
+    # target_link_libraries(${TESTNAME} PRIVATE ${PROJECT_NAME}::${PROJECT_NAME})
+    target_link_libraries(${TESTNAME} PRIVATE Catch2)
+    target_include_directories(${TESTNAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+    add_test(NAME ${TESTNAME} COMMAND ${TESTNAME})
+    set_target_properties(${TESTNAME} PROPERTIES FOLDER test)
+endmacro()
+
+csv_add_test(tests src/main.cpp)

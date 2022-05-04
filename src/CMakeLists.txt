@@ -100,3 +100,7 @@ endif()
 
 add_subdirectory(cfg)
 add_subdirectory(rep)
+
+
+
+add_subdirectory(test) # Catch2
