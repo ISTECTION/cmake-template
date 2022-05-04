@@ -1,14 +1,17 @@
-image: Visual Studio 2015  # образ для сборки
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      GENERATOR: "Visual Studio 14 2015"
+      CONFIG: Debug
 
-language: cpp
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      GENERATOR: "Visual Studio 16 2019"
+      CONFIG: Release
+      ARCH_ARG: "-A x64"
 
-compiler:
-  - gcc
-
-before_script:
+build_script:
   - git submodule init
   - git submodule update
   - mkdir build
   - cmake -G 'MinGW Makefiles' -S . -B build
-
-script: cmake --build build
+  - cmake --build build
