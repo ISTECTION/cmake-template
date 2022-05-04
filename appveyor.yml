@@ -14,4 +14,4 @@ build_script:
   - git submodule update
   - mkdir build
   - cmake -G "%GENERATOR%" -S . -B build
-  - cmake --build build --config '%CONFIG%'
+  - cmake --build build --config "%CONFIG%"
