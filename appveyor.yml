@@ -1,10 +1,14 @@
 image: Visual Studio 2015  # образ для сборки
 
-branches:
-  only:
-    - master # ветка git
+language: cpp
 
-build: off  # будем использовать свой скрипт сборки
+compiler:
+  - gcc
 
-build_script:
-  - Build-Project.ps1
+before_script:
+  - git submodule init
+  - git submodule update
+  - mkdir build
+  - cmake -G 'MinGW Makefiles' -S . -B build
+
+script: cmake --build build
