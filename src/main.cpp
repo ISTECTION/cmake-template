@@ -1,6 +1,8 @@
+#include "../lib/hello_lib/include/lib.hpp"
+
+
 #include "exception/exception.hpp"
 #include "header.hpp"
-#include "lib.hpp"
 
 #include <iostream>
 #include <string>
