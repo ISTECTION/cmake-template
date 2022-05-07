@@ -6,41 +6,27 @@ set(META_VERSION_MINOR       "0")
 set(META_VERSION_PATCH       "0")
 set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
 
-# Преобразование каждого небуквенно-циферного символа на входе
-# в символ подчеркивания
+# Преобразование каждого небуквенно-циферного символа на входе в символ подчеркивания
 string(MAKE_C_IDENTIFIER ${META_PROJECT_NAME} META_PROJECT_ID)
 # Изменение регистра на (ПРОПИСНЫЕ)
 string(TOUPPER           ${META_PROJECT_ID}   META_PROJECT_ID)
 
-set(${META_PROJECT_NAME}_CXX_STANDARD 17)       # Стандарт CXX
-
-# Определяет является ли данные проект подпроектом
-if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR) # if(DEFINED PROJECT_NAME)
-  set(${META_PROJECT_NAME}_SUBPROJECT ON)
+# -------------- Определяет является ли данные проект подпроектом --------------
+if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+  set(${META_PROJECT_ID}_SUBPROJECT ON)
 endif()
-
 # ------------------------------------------------------------------------------
+
 project(
     ${META_PROJECT_NAME}                # <PROJECT-NAME>
     VERSION ${META_VERSION}             # [VERSION <major>[.<minor>[.<patch>[.<tweak>]]]]
     DESCRIPTION "CMakeLists.txt v.1"    # [DESCRIPTION <project-description-string>]
     LANGUAGES CXX)                      # [LANGUAGES <language-name>...]
 
-
-# Add Library
-# add_library(${PROJECT_NAME} INTERFACE)
-# add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-# target_include_directories(${PROJECT_NAME}       INTERFACE
-#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>)
-# Add Library
-
 add_subdirectory(src)
+# add_subdirectory(vendor/Catch2)
 
-add_subdirectory(vendor/Catch2)         # Компиляции Catch2
-
-# ------------------------------------------------------------------------------
-# Подведение итогов настроек, напечатанных при сборке
+# ------------ Подведение итогов настроек, напечатанных при сборке -------------
 message(STATUS " ===== Окончательный обзор для ${PROJECT_NAME} ===== ")
 message(STATUS "Version:    ${META_VERSION}")
 message(STATUS "Compiler:   ${CMAKE_CXX_COMPILER}")

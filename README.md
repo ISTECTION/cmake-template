@@ -1,10 +1,13 @@
 # CMake + Doxygen + GTest + CTest + LaTeX (v.1)
 
+<!-- BUILD STATUS -->
+<!-- [![Build status](https://ci.appveyor.com/api/projects/status/3de0b919bwn2wpa4?svg=true)](https://ci.appveyor.com/project/ISTECTION/cmake-template) -->
+<!-- BUILD STATUS -->
 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3de0b919bwn2wpa4?svg=true)](https://ci.appveyor.com/project/ISTECTION/cmake-template)
-[![LOC](https://sloc.xyz/github/ISTECTION/cmake-template)](https://github.com/ISTECTION/cmake-template)
-
+<!-- TOTAL LINES -->
+<!-- [![LOC](https://sloc.xyz/github/ISTECTION/cmake-template)](https://github.com/ISTECTION/cmake-template) -->
+<!-- TOTAL LINES -->
 
 ## Клонирование репозитория
 
@@ -75,3 +78,7 @@ git rm <директория>
 ```
 git config -f .gitmodules submodule.vendor/tabulate.shallow true
 ```
+
+## TODO
+
+- Добавить больше конфигураций сборки
