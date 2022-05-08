@@ -82,6 +82,7 @@ git config -f .gitmodules submodule.vendor/tabulate.shallow true
 * Создание тега
 ```
 git tag -a v1.0.0 -m "cmake-template 1.0.0"
+git push --tags
 ```
 
 ## TODO
