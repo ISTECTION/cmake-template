@@ -5,9 +5,9 @@ branches:
     - master
 
 platform:
+  - Win32
   - x64
-  - x86
-
+  
 configuration:
   - Release
   - Debug
