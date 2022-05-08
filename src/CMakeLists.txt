@@ -39,13 +39,17 @@ set(HEADERS ${PROJECT_SOURCE_DIR}/include/header.hpp)         # Заголово
 # Компилируем исполняемый файл с заданным именем
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
-# # Линкуем статическую библиотеку к исполняему файлу
-target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_lib)
+# Линкуем статическую библиотеку к исполняему файлу
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        ${PROJECT_NAME}_lib # TODO: Переделать
+        argparse
+)
 
 # Переопределние пути до заголовочных файлов
-target_include_directories(
-    ${PROJECT_NAME}        PRIVATE
-    ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include)
 
 # ---------------------------------------------------------------------------- #
 set_target_properties(${PROJECT_NAME}      PROPERTIES
@@ -74,13 +78,14 @@ if(MSVC)        # Если это MSVC
 else()
     target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
         -Wall               # Вывод сообщений о всех предупреждениях или ошибках, возникающих во время компиляции программы.
-        -Wextra
-        -Wundef             # Предупредить, если неинициализированный идентификатор оценивается в #ifдирективе
-        -Wunused
-        -Wshadow            # Предупреждает всякий раз, когда локальная переменная затеняет другую локальную переменную
-        -Wfloat-equal       # Полезно, потому что обычно проверка чисел с плавающей точкой на равенство плохая.
-        -Wswitch-default    # Предупреждать, когда в switchвыражении нет defaultрегистра
-        -Wnon-virtual-dtor)
+        # -Wextra
+        # -Wundef             # Предупредить, если неинициализированный идентификатор оценивается в #ifдирективе
+        # -Wunused
+        # -Wshadow            # Предупреждает всякий раз, когда локальная переменная затеняет другую локальную переменную
+        # -Wfloat-equal       # Полезно, потому что обычно проверка чисел с плавающей точкой на равенство плохая.
+        # -Wswitch-default    # Предупреждать, когда в switchвыражении нет defaultрегистра
+        # -Wnon-virtual-dtor
+    )
 endif()
 
 # ------------------------------ Опции --------------------------------------- #

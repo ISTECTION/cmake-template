@@ -17,12 +17,12 @@ project(
     DESCRIPTION "CMakeLists.txt v.1"    # [DESCRIPTION <project-description-string>]
     LANGUAGES CXX)                      # [LANGUAGES <language-name>...]
 
+add_subdirectory(vendor/argparse)
+
 add_subdirectory(src)
 
 # ------------ Подведение итогов настроек, напечатанных при сборке -------------
-message(STATUS " ===== Окончательный обзор для ${PROJECT_NAME} ===== ")
-message(STATUS "Version:    ${V1_VERSION}")
-message(STATUS "Compiler:   ${CMAKE_CXX_COMPILER}")
-
-message(STATUS "")
+message(STATUS "===== Окончательный обзор для ${PROJECT_NAME} =====")
+message(STATUS "  Version:    ${V1_VERSION}")
+message(STATUS "  Compiler:   ${CMAKE_CXX_COMPILER}")
 # ------------------------------------------------------------------------------
