@@ -8,6 +8,6 @@
 #define V1_VERSION_MAJOR         "1"
 #define V1_VERSION_MINOR         "0"
 #define V1_VERSION_PATCH         "0"
-#define V1_VERSION               "v1.0.0-3-gfe42ba7"
+#define V1_VERSION               "v1.0.0-7-g476da2b"
 
 #endif /// _CONFIG_H_IN
