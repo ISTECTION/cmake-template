@@ -79,6 +79,11 @@ git rm <директория>
 git config -f .gitmodules submodule.vendor/tabulate.shallow true
 ```
 
+* Создание тега
+```
+git tag -a v1.0.0 -m "cmake-template 1.0.0"
+```
+
 ## TODO
 
 - Добавить больше конфигураций сборки
