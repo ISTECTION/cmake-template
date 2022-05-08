@@ -27,8 +27,8 @@ install:
 
 before_build:
   - mkdir build
-  - cmake -G "%GENERATOR%" -S . -B build
-  - cmake --build build --config "%CONFIG%"
+  - cmake -S . -B build
+  - cmake --build build
 
 build:
   project: $(APPVEYOR_BUILD_FOLDER)\$(APPVEYOR_PROJECT_NAME).sln
