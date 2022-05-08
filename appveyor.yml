@@ -29,6 +29,3 @@ before_build:
   - mkdir build
   - cmake -S . -B build
   - cmake --build build
-
-build:
-  project: build/v1.sln
