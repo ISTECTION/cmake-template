@@ -1,25 +1,16 @@
 image: Visual Studio 2019
 
+branches:
+  only:
+    - master
+
 platform:
   - x64
   - x86
 
 configuration:
-    # ... и в дебажной, и в релизной конфигурациях ...
-    - Release
-    - Debug
-
-
-# environment:
-#   matrix:
-#     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-#       GENERATOR: "Visual Studio 14 2015"
-#       CONFIG: Debug
-
-#     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-#       GENERATOR: "Visual Studio 16 2019"
-#       CONFIG: Release
-#       ARCH_ARG: "-A x64"
+  - Release
+  - Debug
 
 install:
   - git submodule init
@@ -28,4 +19,9 @@ install:
 before_build:
   - mkdir build
   - cmake -S . -B build
+
+build_script:
   - cmake --build build
+
+build:
+  project: build/v1.sln
